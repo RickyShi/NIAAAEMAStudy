@@ -1,0 +1,60 @@
+<root>
+	<category>
+		<description>LAST NIGHT’S DRINKING</description>
+		<question id="q201" type="radio">
+			<text>Did you DRINK ALCOHOL last night?</text>
+			<answer id = "1">Yes</answer>
+			<answer id = "2" skip="q202">No</answer>
+		</question>
+	</category>
+
+	<externalsource baseid="q4" filename="DrinkingQuantityType.xml"></externalsource>
+
+	<category>
+		<description>Hangover last night</description>
+		<question id="q202" type="radio">
+			<text>Do you have a HANGOVER from last night’s drinking?</text>
+			<answer id = "1">Yes</answer>
+			<answer id = "2">No</answer>
+		</question>
+	</category>
+
+	<category>
+		<description>Recent Sexual Behavior</description>
+		<question id="q203" type="radio">
+			<text>Did you have ANAL OR VAGINAL SEX yesterday?</text>
+			<answer id = "1">Yes</answer>
+			<answer id = "2" skip="q205">No</answer>
+		</question>
+		<question id="q204" type="radio">
+			<text>If so, did you use a condom?</text>
+			<answer id = "1">Yes</answer>
+			<answer id = "2">No</answer>
+		</question>
+	</category>
+
+	<category>
+		<description>RECENT SMOKING</description>
+		<question id="q205" type="radio">
+			<text>Have you SMOKED A CIGARETTE in the PAST 15 MINUTES?</text>
+			<answer id = "1">Yes</answer>
+			<answer id = "2" skip="q101">No</answer>
+		</question>
+		<question id="q206" type="number">
+			<text>How many CIGARETTES did you smoke SINCE LAST SURVEY YOU ANSWERED?</text>
+			<answer id = "item">cigarette(s)</answer>
+			<answer id = "min">1</answer>
+			<answer id = "max">24</answer>
+		</question>
+	</category>
+
+	<externalsource baseid="q5" filename="RecentSmokingEffects.xml"></externalsource>
+
+	<externalsource baseid="q1" filename="MoodImpulsivityItems.xml"></externalsource>
+	<externalsource baseid="q1" filename="MoodImpulsivityItemsSubset.xml"></externalsource>
+
+	<externalsource baseid="q6" filename="AlcoholSmokingUrgeCraving.xml"></externalsource>
+	<externalsource baseid="q7" filename="AlcoholHangoverSymptoms.xml"></externalsource>
+	<externalsource baseid="q3" filename="SituationAndSetting.xml"></externalsource>
+	
+</root>
