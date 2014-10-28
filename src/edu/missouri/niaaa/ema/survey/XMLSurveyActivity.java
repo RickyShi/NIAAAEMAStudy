@@ -1207,7 +1207,7 @@ public class XMLSurveyActivity extends Activity {
 			// TODO Auto-generated method stub
 			String data = strings[0];
 
-			DefaultHttpClient client = (DefaultHttpClient) WebClientDevWrapper.getSpecialKeyStoreClient(getApplicationContext());
+			DefaultHttpClient client = (DefaultHttpClient) WebClientDevWrapper.getSpecialKeyStoreClient();
 
 	        if(checkDataConnectivity())
 	 		{
@@ -1395,7 +1395,7 @@ public class XMLSurveyActivity extends Activity {
 
 		@Override
 		protected Boolean doInBackground(String... strings) {
-			DefaultHttpClient client = (DefaultHttpClient) WebClientDevWrapper.getSpecialKeyStoreClient(getApplicationContext());
+			DefaultHttpClient client = (DefaultHttpClient) WebClientDevWrapper.getSpecialKeyStoreClient();
 			String data = strings[0];
 			//	         String UID = strings[0];
 			//	         String Date = strings[1];

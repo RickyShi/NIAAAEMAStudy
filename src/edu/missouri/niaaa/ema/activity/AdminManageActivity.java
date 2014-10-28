@@ -161,7 +161,7 @@ public class AdminManageActivity extends TabActivity {
 /*				check network*/
 
 /*				prepare params for server*/
-				DefaultHttpClient client = (DefaultHttpClient) WebClientDevWrapper.getSpecialKeyStoreClient(getApplicationContext());
+				DefaultHttpClient client = (DefaultHttpClient) WebClientDevWrapper.getSpecialKeyStoreClient();
 				HttpPost request = new HttpPost(Utilities.VALIDATE_ADDRESS);
 
  		        List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -320,7 +320,7 @@ public class AdminManageActivity extends TabActivity {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				DefaultHttpClient client = (DefaultHttpClient) WebClientDevWrapper.getSpecialKeyStoreClient(getApplicationContext());
+				DefaultHttpClient client = (DefaultHttpClient) WebClientDevWrapper.getSpecialKeyStoreClient();
 
             	HttpPost request = new HttpPost(Utilities.VALIDATE_ADDRESS);
 
@@ -549,7 +549,7 @@ public class AdminManageActivity extends TabActivity {
 		protected Boolean doInBackground(String... strings) {
 			// TODO Auto-generated method stub
 			String UID = strings[0];
-			DefaultHttpClient client = (DefaultHttpClient) WebClientDevWrapper.getSpecialKeyStoreClient(getApplicationContext());
+			DefaultHttpClient client = (DefaultHttpClient) WebClientDevWrapper.getSpecialKeyStoreClient();
 
 			HttpPost request = new HttpPost(Utilities.STUDY_DAY_MODIFY_ADDRESS);
 			List<NameValuePair> params = new ArrayList<NameValuePair>();

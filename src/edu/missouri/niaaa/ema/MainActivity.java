@@ -55,6 +55,7 @@ import edu.missouri.niaaa.ema.activity.AdminManageActivity;
 import edu.missouri.niaaa.ema.activity.MorningScheduler;
 import edu.missouri.niaaa.ema.activity.SurveyMenu;
 import edu.missouri.niaaa.ema.activity.SuspensionTimePicker;
+import edu.missouri.niaaa.ema.httpsFactory.CustomerSocketFactory;
 import edu.missouri.niaaa.ema.httpsFactory.WebClientDevWrapper;
 import edu.missouri.niaaa.ema.location.LocationUtilities;
 import edu.missouri.niaaa.ema.logger.Logger;
@@ -87,6 +88,8 @@ public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+
+		setSharedValue();
 		super.onCreate(savedInstanceState);
 		//threadpolicy, maybe changed later
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -96,7 +99,7 @@ public class MainActivity extends Activity {
 
 		setListeners();
 
-		setSharedValue();
+
 
 		IntentFilter suspensionIntent = new IntentFilter(Utilities.BD_ACTION_SUSPENSION);
 		this.registerReceiver(suspensionReceiver, suspensionIntent);
@@ -152,8 +155,10 @@ public class MainActivity extends Activity {
 			finish();
 		}
 
+		// SSLSocketFactory
+		Utilities.sslSocketFactory = CustomerSocketFactory.getSocketFactory(getApplicationContext());
 		//ID
-
+		Log.d("SSLSchedule", "set shared key: " + (Utilities.sslSocketFactory == null));
 //		locationM = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 	}
 
@@ -197,7 +202,7 @@ public class MainActivity extends Activity {
  		        try {
  		        	request.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
 
-					DefaultHttpClient client = (DefaultHttpClient) WebClientDevWrapper.getSpecialKeyStoreClient(getApplicationContext());
+					DefaultHttpClient client = (DefaultHttpClient) WebClientDevWrapper.getSpecialKeyStoreClient();
 					HttpResponse response = client.execute(request);
  		        	if(response.getStatusLine().getStatusCode() == 200){
  		        		String result = EntityUtils.toString(response.getEntity());
@@ -771,6 +776,7 @@ public class MainActivity extends Activity {
 
 		return pubKey;
 	}
+
 
 //================================================================================================================================
 //================================================================================================================================

@@ -27,6 +27,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
@@ -114,6 +115,8 @@ public class Utilities {
 	public final static int CODE_SKIP_BLOCK_SURVEY_RANDOM = 12;
 	public final static int CODE_SKIP_BLOCK_SURVEY_DRINKING = 13;
 	public final static boolean RELEASE = true;
+
+	public static SSLSocketFactory sslSocketFactory = null;
 
 
 	public final static HashMap<String, Integer> MAX_TRIGGER_MAP = new HashMap<String, Integer>(){
@@ -954,7 +957,7 @@ public class Utilities {
 
 
 
-	public static void writeLocationToFile(Location location, Context context) throws IOException {
+	public static void writeLocationToFile(Location location) throws IOException {
 
 		String toWrite;
 		Calendar cal=Calendar.getInstance();
@@ -993,10 +996,10 @@ public class Utilities {
 			e.printStackTrace();
 		}
 
-
+		Log.d("SSLSchedule", "writeLocationToFile");
 		//Ricky
-		TransmitData transmitData = new TransmitData(context);
-		 transmitData.execute(toWriteArr);
+		TransmitData transmitData = new TransmitData();
+		transmitData.execute(toWriteArr);
 
 	}
 
@@ -1050,9 +1053,9 @@ public class Utilities {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		Log.d("SSLSchedule", "writeEventToFile");
 		//Ricky 2013/12/09
-		TransmitData transmitData = new TransmitData(context);
+		TransmitData2 transmitData = new TransmitData2(context);
 		transmitData.execute(ensb);
 
 	}
@@ -1213,13 +1216,10 @@ public class Utilities {
 
 	static class TransmitData extends AsyncTask<String, Void, Boolean>
 	{
-		private Context tContext;
-		public TransmitData (Context context){
-	         tContext = context;
-	    }
+
 		@Override
 		protected Boolean doInBackground(String... strings) {
-			DefaultHttpClient client = (DefaultHttpClient) WebClientDevWrapper.getSpecialKeyStoreClient(tContext);
+			DefaultHttpClient client = (DefaultHttpClient) WebClientDevWrapper.getSpecialKeyStoreClient();
 
 			String data = strings[0];
 	        	 if(true)
@@ -1258,8 +1258,52 @@ public class Utilities {
 
 	}
 
+	static class TransmitData2 extends AsyncTask<String, Void, Boolean>
+	{
+		private Context tContext;
 
+		public TransmitData2(Context context) {
+			this.tContext = context;
+		}
 
+		@Override
+		protected Boolean doInBackground(String... strings) {
+			DefaultHttpClient client = (DefaultHttpClient) WebClientDevWrapper.getSpecialKeyStoreClient(tContext);
 
+			String data = strings[0];
+			if (true)
+			{
+
+				Log.d("((((((((((((((((((((((((", "" + Thread.currentThread().getId());
+				HttpPost request = new HttpPost(UPLOAD_ADDRESS);
+				List<NameValuePair> params = new ArrayList<NameValuePair>();
+				params.add(new BasicNameValuePair("data", data));
+
+				try {
+
+					request.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+					HttpResponse response = client.execute(request);
+					if (response.getStatusLine().getStatusCode() == 200) {
+						String result = EntityUtils.toString(response.getEntity());
+						Log.d("Sensor Data Point Info", result);
+						// Log.d("Wrist Sensor Data Point Info","Data Point Successfully Uploaded!");
+					}
+					return true;
+				} catch (Exception e)
+				{
+					e.printStackTrace();
+					return false;
+				}
+			}
+
+			else
+			{
+				Log.d("Sensor Data Point Info", "No Network Connection:Data Point was not uploaded");
+				return false;
+			}
+
+		}
+
+	}
 
 }

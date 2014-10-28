@@ -67,7 +67,7 @@ public class LocationUtilities {
 						mCurrentLocation = location;
 						try {
 							Log.d("test gps", "gps location");
-							Utilities.writeLocationToFile(location, context);
+							Utilities.writeLocationToFile(location);
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
