@@ -1,26 +1,32 @@
 <root>
 	<category>
-		<description>ALCOHOL INTOXICATION SYMPTOMS</description>
+	    
+<!-- Nick Wergeles changed this for the SLU app Oct30,2014 -->
+
+		<description>Alcohol Intoxication Symptoms</description>
 		<questionblock type="radio">
 			<answer id = "1">1 - Very Slightly or Not At All</answer>
-			<answer id = "2">2 - A little</answer>
+			<answer id = "2">2 - A Little</answer>
 			<answer id = "3">3 - Somewhat</answer>
-			<answer id = "4">4 - Quite a bit</answer>
+			<answer id = "4">4 - Quite A Bit</answer>
 			<answer id = "5">5 - Extremely</answer>
 			<text id="1">Did you feel SLUGGISH?</text>
 			<text id="2">Did you feel BUZZED?</text>
 			<text id="3">Did you feel DIZZY?</text>
 		</questionblock>
 
-		<description>HANGOVER/HANGOVER SYMPTOMS</description>
+		<description>Hangover/Hangover Symptoms</description>
 		<questionblock type="radio">
 			<answer id = "1">1 - Very Slightly or Not At All</answer>
-			<answer id = "2">2 - A little</answer>
+			<answer id = "2">2 - A Little</answer>
 			<answer id = "3">3 - Somewhat</answer>
-			<answer id = "4">4 - Quite a bit</answer>
+			<answer id = "4">4 - Quite A Bit</answer>
 			<answer id = "5">5 - Extremely</answer>
-			<text id="4">Have you had a HEADACHE?</text>
-			<text id="5">Have you felt NAUSEOUS?</text>
+			<text id="1">Have you had a HEADACHE?</text>
+			<text id="2">Have you felt NAUSEOUS?</text>
+			
+<!-- End of Nick's changes -->
+
 		</questionblock>
 	</category>
 </root>

@@ -1,23 +1,26 @@
 <root>
 	<category type="random">
-		<description>MOOD Items and IMPULSIVITY Items</description>
+	    
+<!-- Nick Wergeles changed this for the SLU app Oct30,2014 -->
+
+		<description>Mood and Impulsivity Items</description>
 		<questionblock type="radio">
 			<answer id = "1">1 - Very Slightly or Not At All</answer>
-			<answer id = "2">2 - A little</answer>
+			<answer id = "2">2 - A Little</answer>
 			<answer id = "3">3 - Somewhat</answer>
-			<answer id = "4">4 - Quite a bit</answer>
+			<answer id = "4">4 - Quite A Bit</answer>
 			<answer id = "5">5 - Extremely</answer>
 
 			<text id="01">How much have you felt the following IN THE PAST 15 MINUTES? ||AFRAID</text>
-			<text id="02">How much have you felt the following IN THE PAST 15 MINUTES? ||ASHAMED</text>
-			<text id="03">How much have you felt the following IN THE PAST 15 MINUTES? ||DISTRESSED</text>
-			<text id="04">How much have you felt the following IN THE PAST 15 MINUTES? ||HOSTILE</text>
-			<text id="05">How much have you felt the following IN THE PAST 15 MINUTES? ||IRRITABLE</text>
-			<text id="06">How much have you felt the following IN THE PAST 15 MINUTES? ||JITTERY</text>
-			<text id="07">How much have you felt the following IN THE PAST 15 MINUTES? ||NERVOUS</text>
-			<text id="08">How much have you felt the following IN THE PAST 15 MINUTES? ||SCARED</text>
-			<text id="09">How much have you felt the following IN THE PAST 15 MINUTES? ||UPSET</text>
-			<text id="10">How much have you felt the following IN THE PAST 15 MINUTES? ||GUILTY</text>
+			<text id="02">How much have you felt the following IN THE PAST 15 MINUTES? ||GUILTY</text>
+			<text id="03">How much have you felt the following IN THE PAST 15 MINUTES? ||HOSTILE</text>
+			<text id="04">How much have you felt the following IN THE PAST 15 MINUTES? ||IRRITABLE</text>
+			<text id="05">How much have you felt the following IN THE PAST 15 MINUTES? ||JITTERY</text>
+			<text id="06">How much have you felt the following IN THE PAST 15 MINUTES? ||NERVOUS</text>
+			<text id="07">How much have you felt the following IN THE PAST 15 MINUTES? ||SCARED</text>
+			<text id="08">How much have you felt the following IN THE PAST 15 MINUTES? ||UPSET</text>
+			<text id="09">How much have you felt the following IN THE PAST 15 MINUTES? ||DISTRESSED</text> 
+			<text id="10">How much have you felt the following IN THE PAST 15 MINUTES? ||ASHAMED</text>
 			<text id="11">How much have you felt the following IN THE PAST 15 MINUTES? ||ACTIVE</text>
 			<text id="12">How much have you felt the following IN THE PAST 15 MINUTES? ||ALERT</text>
 			<text id="13">How much have you felt the following IN THE PAST 15 MINUTES? ||ATTENTIVE</text>
@@ -30,4 +33,7 @@
 			<text id="20">How much have you felt the following IN THE PAST 15 MINUTES? ||STRONG</text>
 		</questionblock>
 	</category>
+	
+<!-- End of Nick's Changes -->
+
 </root>

@@ -1,12 +1,15 @@
 <root>
 	<category>
-		<description>DRINKING EXPECTANCY MOTIVATION ITEMS</description>
+
+<!-- Nick Wergeles changed this for the SLU app Oct30,2014 -->
+
+		<description>Drinking Expectancy Motivation Items</description>
 		<questionblock type="radio">
 			<answer id="1">1 - Strongly Disagree</answer>
 			<answer id="2">2 - Disagree</answer>
 			<answer id="3">3 - Agree</answer>
 			<answer id="4">4 - Strongly Agree</answer>
-
+			
 			<text id="1">I drank alcohol because it would make it easier to be around other people.</text>
 			<text id="2">I drank alcohol because it would make me feel more relaxed or calm.</text>
 			<text id="3">I drank alcohol because it would make me more courageous or daring.</text>
@@ -16,17 +19,20 @@
 			<text id="7">I drank alcohol because it would make me feel guilty or depressed.</text>
 		</questionblock>
 
-		<description>ALCOHOL EFFECTS</description>
+		<description>Alcohol Effects</description>
 		<questionblock type="radio">
 			<answer id = "1">1 - Very Slightly or Not At All</answer>
-			<answer id = "2">2 - A little</answer>
+			<answer id = "2">2 - A Little</answer>
 			<answer id = "3">3 - Somewhat</answer>
-			<answer id = "4">4 - Quite a bit</answer>
+			<answer id = "4">4 - Quite A Bit</answer>
 			<answer id = "5">5 - Extremely</answer>
 
-			<text id="8">The DRINK was PLEASUREABLE.</text>
-			<text id="9">The DRINK relieved UNPLEASANT FEELINGS or SYMPTOMS.</text>
-			<text id="10">The DRINK made me feel WORSE.</text>
+			<text id="1">The DRINK was PLEASUREABLE.</text>
+			<text id="2">The DRINK relieved UNPLEASANT FEELINGS or SYMPTOMS.</text>
+			<text id="3">The DRINK made me feel WORSE.</text>
 		</questionblock>
+		
+<!-- End of Nick's Changes -->
+
 	</category>
 </root>

@@ -2,8 +2,10 @@
 	<externalsource baseid="q4" filename="DrinkingQuantityType.xml"></externalsource>
 	<externalsource baseid="q9" filename="DrinkingExpectancyEffects.xml"></externalsource>
 
+<!-- Nick Wergeles changed this for the SLU app Oct30,2014 -->
+	
 	<category>
-		<description>RECENT SMOKING</description>
+		<description>Recent Smoking</description>
 		<question id="q801" type="radio">
 			<text>Have you SMOKED A CIGARETTE in the PAST 15 MINUTES?</text>
 			<answer id = "1">Yes</answer>
@@ -11,14 +13,15 @@
 		</question>
 		<question id="q802" type="number">
 			<text>How many CIGARETTES did you smoke SINCE LAST SURVEY YOU ANSWERED?</text>
-			<answer id = "item">cigarette(s)</answer>
+			<answer id = "item">Cigarette(s)</answer>
 			<answer id = "min">0</answer>
 			<answer id = "max">24</answer>
 		</question>
 	</category>
+	
+<!-- End of Nick's Changes -->
 
 	<externalsource baseid="q5" filename="RecentSmokingEffects.xml"></externalsource>
-
 	<externalsource baseid="q1" filename="MoodImpulsivityItems.xml"></externalsource>
 	<externalsource baseid="q1" filename="MoodImpulsivityItemsSubset.xml"></externalsource>
 

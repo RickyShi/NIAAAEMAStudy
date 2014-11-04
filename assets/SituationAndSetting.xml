@@ -1,12 +1,15 @@
 <root>
 	<category>
-		<description>Situation and setting</description>
+
+<!-- Nick Wergeles changed this for the SLU app Oct30,2014 -->
+
+		<description>Situation and Setting</description>
 		<question id = "1" type = "check">
 			<text>In the past 15 minutes, WHO have you been with? (check all that apply)</text>
-			<answer id = "1" action="uncheck">No one</answer>
-			<answer id = "2">Partner/spouse</answer>
-			<answer id = "3">Other family member</answer>
-			<answer id = "4">Friend/acquaintance</answer>
+			<answer id = "1" action="uncheck">No One</answer>
+			<answer id = "2">Partner/Spouse</answer>
+			<answer id = "3">Other Family Member</answer>
+			<answer id = "4">Friend/Acquaintance(s)</answer>
 			<answer id = "5">Other</answer>
 		</question>
 		
@@ -14,9 +17,9 @@
 			<text>In the past 15 minutes, WHERE is your location? (check all that apply)</text>
 			<answer id = "1">Home</answer>
 			<answer id = "2">Work</answer>
-			<answer id = "3">Bar/restaurant</answer>
+			<answer id = "3">Bar/Restaurant</answer>
 			<answer id = "4">Outside</answer>
-			<answer id = "5">Other public place</answer>
+			<answer id = "5">Other Public Place</answer>
 			<answer id = "6">Other</answer>
 		</question>
 	</category>
