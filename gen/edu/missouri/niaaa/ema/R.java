@@ -181,6 +181,11 @@ containing a value of this type.
     }
     public static final class dimen {
         /** 
+         Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
+    
+
          Customize dimensions originally defined in res/values/dimens.xml (such as
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
@@ -189,6 +194,7 @@ containing a value of this type.
         /**  Default screen margins, per the Android Design guidelines. 
          */
         public static final int activity_top_margin=0x7f090000;
+        public static final int activity_vertical_margin=0x7f090002;
     }
     public static final class drawable {
         public static final int common_signin_btn_icon_dark=0x7f020000;
@@ -222,7 +228,8 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f02001c;
     }
     public static final class id {
-        public static final int about=0x7f060021;
+        public static final int about=0x7f060022;
+        public static final int action_settings=0x7f060020;
         public static final int assigned_ID=0x7f060007;
         public static final int btnReturn=0x7f06001a;
         public static final int btnSchedule=0x7f060019;
@@ -231,7 +238,7 @@ containing a value of this type.
         public static final int btn_remove=0x7f06000c;
         public static final int deassigned_ID=0x7f06000b;
         public static final int hybrid=0x7f060004;
-        public static final int manage=0x7f060020;
+        public static final int manage=0x7f060021;
         public static final int morning_box=0x7f060018;
         public static final int morning_picker=0x7f060017;
         public static final int morning_text=0x7f060016;
@@ -262,25 +269,29 @@ containing a value of this type.
     }
     public static final class layout {
         public static final int activity_admin_manage=0x7f030000;
-        public static final int activity_main=0x7f030001;
-        public static final int activity_morning_scheduler=0x7f030002;
-        public static final int activity_suspension_picker=0x7f030003;
-        public static final int pin_input=0x7f030004;
-        public static final int remove_id=0x7f030005;
-        public static final int survey_layout=0x7f030006;
-        public static final int test=0x7f030007;
+        public static final int activity_charge_reminder=0x7f030001;
+        public static final int activity_main=0x7f030002;
+        public static final int activity_morning_scheduler=0x7f030003;
+        public static final int activity_suspension_picker=0x7f030004;
+        public static final int pin_input=0x7f030005;
+        public static final int remove_id=0x7f030006;
+        public static final int survey_layout=0x7f030007;
+        public static final int test=0x7f030008;
     }
     public static final class menu {
-        public static final int main=0x7f0b0000;
+        public static final int charge_reminder=0x7f0b0000;
+        public static final int main=0x7f0b0001;
     }
     public static final class raw {
         public static final int alarm_sound=0x7f040000;
         public static final int example=0x7f040001;
-        public static final int publickey=0x7f040002;
+        public static final int new_alarm_sound=0x7f040002;
+        public static final int publickey=0x7f040003;
     }
     public static final class string {
+        public static final int action_settings=0x7f070083;
         public static final int admin_set_msg=0x7f07003a;
-        /**  Admin  
+        /**  Admin 
          */
         public static final int admin_set_title=0x7f070039;
         public static final int app_name=0x7f07001b;
@@ -327,7 +338,7 @@ containing a value of this type.
          */
         public static final int bedtime_title=0x7f07002b;
         public static final int bluetooth_disabled=0x7f070070;
-        /**  Bluetooth  
+        /**  Bluetooth 
          */
         public static final int bluetooth_enabled=0x7f07006f;
         public static final int bluetooth_loop=0x7f070072;
@@ -339,6 +350,9 @@ containing a value of this type.
         /**  Surveys 
          */
         public static final int btn_submit=0x7f070051;
+        public static final int charge_reminder_alert_button=0x7f070087;
+        public static final int charge_reminder_alert_message=0x7f070086;
+        public static final int charge_reminder_alert_title=0x7f070085;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -415,6 +429,7 @@ containing a value of this type.
         public static final int device_select=0x7f070076;
         public static final int first_drink_msg=0x7f07006a;
         public static final int first_drink_title=0x7f070069;
+        public static final int hello_world=0x7f070082;
         /**  Initial Drinking 
          */
         public static final int initial_drink_name=0x7f070068;
@@ -455,7 +470,7 @@ containing a value of this type.
         public static final int pin_message_wrong=0x7f07004b;
         public static final int pin_title=0x7f070048;
         public static final int pin_title_wrong=0x7f07004a;
-        /**  Warning  
+        /**  Warning 
          */
         public static final int public_key_lost=0x7f070079;
         public static final int remove_btn=0x7f070040;
@@ -473,10 +488,10 @@ containing a value of this type.
         public static final int section_5=0x7f070028;
         public static final int section_6=0x7f070029;
         public static final int section_62=0x7f07002a;
-        /**  Sensor  
+        /**  Sensor 
          */
         public static final int sensor_connect=0x7f070078;
-        /**  Service  
+        /**  Service 
          */
         public static final int service_start=0x7f07006b;
         public static final int service_stop=0x7f07006c;
@@ -500,6 +515,9 @@ containing a value of this type.
          */
         public static final int suspension_title=0x7f070031;
         public static final int suspension_under=0x7f070038;
+        /**  Charge Reminder 
+         */
+        public static final int title_activity_charge_reminder=0x7f070084;
         public static final int user_setpwd_msg=0x7f07003c;
         public static final int user_setpwd_title=0x7f07003b;
         public static final int yes=0x7f07001c;

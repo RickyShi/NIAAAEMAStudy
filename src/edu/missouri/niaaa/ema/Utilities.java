@@ -17,6 +17,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
+import java.util.TimeZone;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
@@ -42,6 +43,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Location;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.util.Base64;
 import android.util.Log;
@@ -59,6 +62,12 @@ import edu.missouri.niaaa.ema.location.LocationUtilities;
 
 public class Utilities {
 
+	/* REcording */
+	public final static String ACTION_RECORD = "edu.missouri.niaaa.ema.ACTION_RECORD";
+	public final static String LINEBREAK = System.getProperty("line.separator");
+	public final static String SPLIT = "---------------------------------------";
+	public static final String RECORDING_CATEGORY = "Recording";
+	public static String curBatt = "nan";
 /*	survey type*/
 	public final static String SV_FILE = "survey_file";
 	public final static String SV_NAME = "survey_name";
@@ -99,7 +108,8 @@ public class Utilities {
 	public final static int MAX_TRIGGER_MORNING = 1;//1
 	public final static int MAX_TRIGGER_RANDOM = 3;//3
 	public final static int MAX_TRIGGER_FOLLOWUP = 3;//3
-	public final static int VOLUME = 8;//10
+	public final static int VOLUME = 15;//it was 10 out of 15 with the old ring tone
+	//public final static int RINGVOLUME = 15;
 	public final static String PHONE_BASE_PATH = "sdcard/TestResult_ema/";
 	public final static int CODE_NAME_MORNING = 1;
 	public final static int CODE_NAME_DRINKING = 2;
@@ -1304,6 +1314,44 @@ public class Utilities {
 
 		}
 
+	}
+
+	/* Recording */
+	public static String getConnectionState(Context ctx) {
+		ConnectivityManager manager = (ConnectivityManager) ctx.getApplicationContext()
+				.getSystemService(Context.CONNECTIVITY_SERVICE);
+		if (manager == null) {
+			return "Hardware Problem";
+		}
+		NetworkInfo networkInfo = manager.getActiveNetworkInfo();
+		if (networkInfo == null) {
+			return "Not Connected";
+		}
+		if (networkInfo.isAvailable()) {
+			return "Connected";
+		}
+		return "Not Connected";
+
+	}
+
+	public static void scheduleRecording(Context context) {
+		Intent i = new Intent(Utilities.ACTION_RECORD);
+		context.sendBroadcast(i);
+	}
+
+	public static String getCurrentTimeStamp()
+	{
+		Calendar cal = Calendar.getInstance();
+		cal.setTimeZone(TimeZone.getTimeZone("US/Central"));
+		return String.valueOf(cal.getTime());
+	}
+
+	public static String getFileDate()
+	{
+		Calendar c = Calendar.getInstance();
+		SimpleDateFormat curFormater = new SimpleDateFormat("MMMMM_dd");
+		String dateObj = curFormater.format(c.getTime());
+		return dateObj;
 	}
 
 }

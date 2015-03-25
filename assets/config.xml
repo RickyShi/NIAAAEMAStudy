@@ -6,9 +6,16 @@
 		<item type="select" file="MorningReportParcel.xml" name="MORNING_REPORT">Morning Report</item>
 		<item type="select" file="InitialDrinkingParcel.xml" name = "INITIAL_DRINKING">Initial Drinking</item>
 		<item type="select" file="MoodDysregulationParcel.xml" name = "MOOD_DYSREGULATION">Mood Change</item>
-
-<!-- End of Nick's changes -->		
-	
+		
+			<!-- these two for debug: -->
+				<!-- 	<item type="select" file="RandomAssessmentParcel.xml" name="RANDOM_ASSESSMENT">R</item> -->
+				<!-- 	<item type="select" file="DrinkingFollowupParcel.xml" name="DRINKING_FOLLOWUP">D</item> -->
 	</menu>
+
+			<!-- <components>
+				<sensor type="internal" name="accelerometer" interval="1s"/>
+			</components> -->
+
+<!-- End of Nick's changes -->
 
 </root>

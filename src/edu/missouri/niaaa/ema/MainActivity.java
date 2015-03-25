@@ -59,6 +59,7 @@ import edu.missouri.niaaa.ema.httpsFactory.CustomerSocketFactory;
 import edu.missouri.niaaa.ema.httpsFactory.WebClientDevWrapper;
 import edu.missouri.niaaa.ema.location.LocationUtilities;
 import edu.missouri.niaaa.ema.logger.Logger;
+import edu.missouri.niaaa.ema.services.RecordingService;
 
 
 public class MainActivity extends Activity {
@@ -81,7 +82,7 @@ public class MainActivity extends Activity {
 	InputMethodManager imm;
 	SharedPreferences shp;
 	Editor editor;
-	String ID;
+	public static String ID;
 	String PWD;
 
 
@@ -139,6 +140,10 @@ public class MainActivity extends Activity {
         	if(Utilities.completedMorningToday(this) || Calendar.getInstance().get(Calendar.HOUR_OF_DAY) < 3){
         		sendBroadcast(new Intent(LocationUtilities.ACTION_START_LOCATION));
         	}
+			// RECORDING
+			Intent i = new Intent(MainActivity.this, RecordingService.class);
+			startService(i);
+			Utilities.scheduleRecording(MainActivity.this);
         }
 	}
 
@@ -218,7 +223,10 @@ public class MainActivity extends Activity {
 
  		        			Utilities.scheduleAll(MainActivity.this);
  		        			Utilities.scheduleDaemon(MainActivity.this);
-// 		        			startSService();
+							// RECORDING
+							Intent i = new Intent(MainActivity.this, RecordingService.class);
+							startService(i);
+							Utilities.scheduleRecording(MainActivity.this);
  		        		}else{
  		        			//imm.toggleSoftInput(0, InputMethodManager.RESULT_SHOWN);
  		        			//imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);

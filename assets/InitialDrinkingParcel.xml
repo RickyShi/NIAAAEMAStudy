@@ -14,7 +14,7 @@
 		<question id="q802" type="number">
 			<text>How many CIGARETTES did you smoke SINCE LAST SURVEY YOU ANSWERED?</text>
 			<answer id = "item">Cigarette(s)</answer>
-			<answer id = "min">0</answer>
+			<answer id = "min">1</answer>
 			<answer id = "max">24</answer>
 		</question>
 	</category>

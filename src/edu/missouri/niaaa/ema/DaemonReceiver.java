@@ -4,11 +4,14 @@ import java.util.Calendar;
 
 import edu.missouri.niaaa.ema.location.LocationUtilities;
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.widget.Toast;
 
 public class DaemonReceiver extends BroadcastReceiver {
@@ -47,6 +50,12 @@ public class DaemonReceiver extends BroadcastReceiver {
 			
 			am.setExact(AlarmManager.RTC_WAKEUP, getProperTime(3, 0), piTrigger3);
 			
+			//Nine oclock reminder charge phone and bluetooth device 
+			Intent itTrigger4 = new Intent(Utilities.BD_ACTION_DAEMON);
+			itTrigger4.putExtra(Utilities.BD_ACTION_DAEMON_FUNC, 4);//int
+			PendingIntent piTrigger4 = PendingIntent.getBroadcast(context, 4, itTrigger4, Intent.FLAG_ACTIVITY_NEW_TASK);
+			
+			am.setExact(AlarmManager.RTC_WAKEUP, getProperTime(21, 0), piTrigger4);
 			
 		}
 		else if(fun == 1){//Noon
@@ -152,6 +161,46 @@ public class DaemonReceiver extends BroadcastReceiver {
 //			PendingIntent piTrigger3 = PendingIntent.getBroadcast(context, 3, itTrigger3, Intent.FLAG_ACTIVITY_NEW_TASK);
 //			
 //			am.setExact(AlarmManager.RTC_WAKEUP, getProperTime(3, 0)+Utilities.getDayLong(), piTrigger3);
+		}
+		else if(fun == 4){
+			 /* AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+			  alertDialogBuilder.setTitle("Charge Reminder");
+		      alertDialogBuilder.setMessage("Please remember to charge your Phone and Other Devices before you go to bed.");
+		      alertDialogBuilder.setCancelable(true);
+		      alertDialogBuilder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+				
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.cancel();
+						
+					}
+			   });
+			    
+		      AlertDialog alertDialog = alertDialogBuilder.create();
+		      alertDialog.show();*/
+			
+			//Toast.makeText(context, "This is where the alertDialog will show", Toast.LENGTH_LONG).show();
+			
+			
+			
+			
+			Intent i = new Intent(context.getApplicationContext(), ChargeReminder.class);
+			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			context.startActivity(i);
+			
+			
+			
+			//Nine oclock reminder charge phone and bluetooth device 
+			Intent itTrigger4 = new Intent(Utilities.BD_ACTION_DAEMON);
+			itTrigger4.putExtra(Utilities.BD_ACTION_DAEMON_FUNC, 4);//int
+			PendingIntent piTrigger4 = PendingIntent.getBroadcast(context, 4, itTrigger4, Intent.FLAG_ACTIVITY_NEW_TASK);
+			
+			am.setExact(AlarmManager.RTC_WAKEUP, getProperTime(21, 0), piTrigger4);
+			
+			Log.d("Nine oclock reminder", "Reseting the nine oclock reminder for the next day");
+			Toast.makeText(context, "Reseting the 9pm reminder for tomorrow", Toast.LENGTH_LONG).show();
+			
+			
 		}
 		else{
 			
