@@ -63,8 +63,8 @@ public class RecordingReceiver extends BroadcastReceiver {
 
 	private long getNextLongTime() {
 		Calendar s = Calendar.getInstance();
-		// s.add(Calendar.MINUTE, 5);
-		s.add(Calendar.SECOND, 30);
+		s.add(Calendar.MINUTE, 5);
+		// s.add(Calendar.SECOND, 30);
 		return s.getTimeInMillis();
 	}
 
